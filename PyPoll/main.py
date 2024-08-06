@@ -59,6 +59,26 @@ print("-------------------------")
 print(f'Winner: {winner_name}') 
 print("-------------------------")
 
+#Set path for output file 
+
+output_file = os.path.join("analysis","election_analysis.txt")
+	
+#Open the output file 
+
+with open(output_file, "w") as file:
+
+#Print statements to output file 
+	print("Election Results", file=file)
+	print("---------------------", file=file)
+	print(f'Total votes: {total_votes}', file=file)
+	print("-------------------------", file=file)
+	for candidate,votes in voter_count.items():
+		percentage = (votes/total_votes) * 100
+		print(f'{candidate}: {percentage:.3f}% ({votes})', file=file)
+	print("-------------------------", file=file)
+	print(f'Winner: {winner_name}', file=file)
+	print("-------------------------", file=file) 
+
 
  
 			
